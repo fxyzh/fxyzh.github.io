@@ -11,3 +11,4 @@ Personal website. Hosted on GitHub Pages.
 ## Local Preview
 
 Open `index.html` in a browser.
+

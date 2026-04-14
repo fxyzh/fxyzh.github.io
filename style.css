@@ -141,15 +141,22 @@ footer {
   text-align: center;
 }
 
-/* Dark mode */
+/* Dark mode — follows system preference */
 @media (prefers-color-scheme: dark) {
-  body { background-color: #20212b; color: #dadbdf; }
-  autocolor { color: #dadbdf; }
-  h1, h2, h3, h4, h5, h6 { color: #3eb7f0; }
-  a { color: #3eb7f0; }
-  strong { color: #eeeff0; }
-  .social-icons a { color: #3eb7f0 !important; }
-  .social-icons a:hover { background-color: #20212b; }
+  body { background-color: #1a1b25; color: #d8d9dd; }
+  autocolor { color: #d8d9dd; }
+  position { color: #b0b1b5; }
+  email { color: #9ca3af; }
+  h1, h2, h3, h4, h5, h6 { color: #6cb4e6; }
+  a { color: #6cb4e6; }
+  a:hover { color: #93ccf0; }
+  strong { color: #ecedef; }
+  small { color: #9ca3af; }
+  .social-icons a { color: #6cb4e6 !important; }
+  .social-icons a:hover { background-color: #2a2b38; color: #fff !important; transform: scale(1.2); }
+  hr { background: #3a3b48; }
+  section { border-color: #3a3b48; }
+  li { color: #d8d9dd; }
 }
 
 /* Responsive */

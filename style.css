@@ -61,11 +61,32 @@ autocolor {
 /* Avatar */
 .image.avatar img {
   border-radius: 50%;
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   padding: 0;
 }
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: #e5e5e5;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+.theme-toggle:hover { opacity: 0.8; }
+[data-theme="dark"] .theme-toggle { background: #3a3b48; }
 
 /* Social icons */
 .social-icons a {
@@ -138,23 +159,39 @@ footer {
   text-align: center;
 }
 
-/* Dark mode — follows system preference */
+/* Dark mode — system preference OR manual toggle */
 @media (prefers-color-scheme: dark) {
-  body { background-color: #1a1b25; color: #d8d9dd; }
-  autocolor { color: #d8d9dd; }
-  position { color: #b0b1b5; }
-  email { color: #9ca3af; }
-  h1, h2, h3, h4, h5, h6 { color: #6cb4e6; }
-  a { color: #6cb4e6; }
-  a:hover { color: #93ccf0; }
-  strong { color: #ecedef; }
-  small { color: #9ca3af; }
-  .social-icons a { color: #6cb4e6 !important; }
-  .social-icons a:hover { background-color: #2a2b38; color: #fff !important; transform: scale(1.2); }
-  hr { background: #3a3b48; }
-  section { border-color: #3a3b48; }
-  li { color: #d8d9dd; }
+  body:not([data-theme="light"]) { background-color: #1a1b25; color: #d8d9dd; }
+  body:not([data-theme="light"]) autocolor { color: #d8d9dd; }
+  body:not([data-theme="light"]) position { color: #b0b1b5; }
+  body:not([data-theme="light"]) email { color: #9ca3af; }
+  body:not([data-theme="light"]) h1, body:not([data-theme="light"]) h2, body:not([data-theme="light"]) h3, body:not([data-theme="light"]) h4, body:not([data-theme="light"]) h5, body:not([data-theme="light"]) h6 { color: #6cb4e6; }
+  body:not([data-theme="light"]) a { color: #6cb4e6; }
+  body:not([data-theme="light"]) a:hover { color: #93ccf0; }
+  body:not([data-theme="light"]) strong { color: #ecedef; }
+  body:not([data-theme="light"]) small { color: #9ca3af; }
+  body:not([data-theme="light"]) .social-icons a { color: #6cb4e6 !important; }
+  body:not([data-theme="light"]) .social-icons a:hover { background-color: #2a2b38; color: #fff !important; }
+  body:not([data-theme="light"]) hr { background: #3a3b48; }
+  body:not([data-theme="light"]) section { border-color: #3a3b48; }
+  body:not([data-theme="light"]) .theme-toggle { background: #3a3b48; }
 }
+
+/* Manual dark override */
+[data-theme="dark"] { background-color: #1a1b25; color: #d8d9dd; }
+[data-theme="dark"] autocolor { color: #d8d9dd; }
+[data-theme="dark"] position { color: #b0b1b5; }
+[data-theme="dark"] email { color: #9ca3af; }
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 { color: #6cb4e6; }
+[data-theme="dark"] a { color: #6cb4e6; }
+[data-theme="dark"] a:hover { color: #93ccf0; }
+[data-theme="dark"] strong { color: #ecedef; }
+[data-theme="dark"] small { color: #9ca3af; }
+[data-theme="dark"] .social-icons a { color: #6cb4e6 !important; }
+[data-theme="dark"] .social-icons a:hover { background-color: #2a2b38; color: #fff !important; }
+[data-theme="dark"] hr { background: #3a3b48; }
+[data-theme="dark"] section { border-color: #3a3b48; }
+[data-theme="dark"] .theme-toggle { background: #3a3b48; }
 
 /* Responsive */
 @media print, screen and (max-width: 960px) {
@@ -163,12 +200,12 @@ footer {
   header { text-align: center; padding-top: 2em; }
   section { border: 1px solid #e5e5e5; border-width: 1px 0; padding: 20px 0; margin: 0 0 20px; }
   footer { text-align: center; }
-  .image.avatar img { width: 140px; height: 140px; }
+  .image.avatar img { width: 100px; height: 100px; }
 }
 
 @media print, screen and (max-width: 480px) {
   body { padding: 15px; }
-  .image.avatar img { width: 120px; height: 120px; }
+  .image.avatar img { width: 90px; height: 90px; }
   h1 { font-size: 22px; }
   h2 { font-size: 130%; }
 }

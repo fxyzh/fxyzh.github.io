@@ -12,6 +12,8 @@
 </head>
 <body>
 
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+
   <div class="wrapper">
     <header>
       <a class="image avatar"><img src="assets/img/avatar.jpg" alt="avatar" /></a>
@@ -120,6 +122,33 @@
       <!-- Updated April 2026 -->
     </footer>
   </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Load saved preference
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      body.setAttribute('data-theme', saved);
+      toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = body.getAttribute('data-theme') === 'dark' ||
+        (!body.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      if (isDark) {
+        body.setAttribute('data-theme', 'light');
+        toggle.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        toggle.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
 
 </body>
 </html>

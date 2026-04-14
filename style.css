@@ -1,36 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
-/* Light theme (default) */
+/* Light theme — Georgia Tech colors */
 :root {
   --bg: #ffffff;
-  --text: #595959;
-  --heading: #043361;
-  --link: #39c;
-  --link-hover: #069;
-  --strong: #222;
-  --muted: #777;
-  --border: #e5e5e5;
-  --icon: #043361;
-  --icon-hover-bg: #f0f0f0;
-  --toggle-bg: #e5e5e5;
-  --email: #595959;
+  --text: #54585A;
+  --heading: #003057;
+  --link: #B3A369;
+  --link-hover: #857437;
+  --strong: #003057;
+  --muted: #54585A;
+  --border: #d6d6d6;
+  --icon: #003057;
+  --icon-hover-bg: #f0eddf;
+  --toggle-bg: #e8e3d3;
+  --email: #54585A;
+  --accent: #B3A369;
 }
 
-/* Dark theme */
+/* Dark theme — Georgia Tech colors */
 [data-theme="dark"] {
-  --bg: #1a1b25;
+  --bg: #1a1d23;
   --text: #d8d9dd;
-  --heading: #6cb4e6;
-  --link: #6cb4e6;
-  --link-hover: #93ccf0;
+  --heading: #B3A369;
+  --link: #B3A369;
+  --link-hover: #d4c98a;
   --strong: #ecedef;
   --muted: #9ca3af;
   --border: #3a3b48;
-  --icon: #6cb4e6;
+  --icon: #B3A369;
   --icon-hover-bg: #2a2b38;
   --toggle-bg: #3a3b48;
   --email: #9ca3af;
+  --accent: #B3A369;
 }
 
 body {

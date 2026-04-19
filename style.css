@@ -56,7 +56,7 @@ header {
   float: left;
   position: fixed;
   -webkit-font-smoothing: subpixel-antialiased;
-  padding-top: 4em;
+  padding-top: 5.5em;
   text-align: center;
 }
 
@@ -96,7 +96,7 @@ autocolor { color: var(--text); }
 /* Theme toggle */
 .theme-toggle {
   position: fixed;
-  top: 16px;
+  top: 54px;
   right: 16px;
   background: var(--toggle-bg);
   border: none;
@@ -129,25 +129,31 @@ autocolor { color: var(--text); }
 .social-icons a:last-child { margin-right: 0; }
 .social-icons a:hover { background-color: var(--icon-hover-bg); transform: scale(1.2); }
 
-/* Sidebar navigation */
-.sidebar-nav {
-  margin-top: 1.5em;
+/* Top navigation bar */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  text-align: left;
-  padding-left: 20px;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  z-index: 998;
+  transition: background-color 0.3s, border-color 0.3s;
 }
-.sidebar-nav a {
+.top-nav a {
   color: var(--text);
   font-size: 15px;
-  padding: 4px 10px;
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
 }
-.sidebar-nav a:hover {
+.top-nav a:hover {
   color: var(--link);
-  border-left-color: var(--accent);
+  background-color: var(--icon-hover-bg);
 }
 
 /* Abstract */
@@ -163,7 +169,7 @@ autocolor { color: var(--text); }
 section {
   width: 650px;
   float: right;
-  padding-top: 4em;
+  padding-top: 5.5em;
   padding-bottom: 50px;
 }
 
@@ -203,6 +209,9 @@ footer {
   .sidebar-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; padding-left: 0; gap: 4px 12px; }
   .sidebar-nav a { border-left: none; border-bottom: 2px solid transparent; padding: 4px 6px; }
   .sidebar-nav a:hover { border-left: none; border-bottom-color: var(--accent); }
+  .top-nav { gap: 4px; padding: 8px 10px; }
+  .top-nav a { font-size: 13px; padding: 4px 8px; }
+  .theme-toggle { top: 50px; }
 }
 
 @media print, screen and (max-width: 480px) {
